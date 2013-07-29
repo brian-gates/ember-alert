@@ -1,0 +1,21 @@
+script(type="text/x-handlebars", data-template-name="alert")
+  {{#if errors}}
+  div.alert.alert-error
+    | <button type="button" class="close" {{action "clearAlerts" "error"}}>&times;</button>
+    {{list errors}}
+  {{/if}}
+  {{#if successes}}
+  div.alert.alert-success
+    | <button type="button" class="close" {{action "clearAlerts" "success"}}>&times;</button>
+    {{list successes}}
+  {{/if}}
+  {{#if alerts}}
+  div.alert
+    | <button type="button" class="close" {{action "clearAlerts" "alert"}}>&times;</button>
+    {{list alerts}}
+  {{/if}}
+  {{#if infos}}
+  div.alert.alert-info
+    | <button type="button" class="close" {{action "clearAlerts" "info"}}>&times;</button>
+    {{list infos}}
+  {{/if}}
